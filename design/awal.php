@@ -72,6 +72,16 @@
           <i class="fas fa-fw fa-user-graduate"></i>
           <span>Data Siswa</span></a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/uas-web/siswa/siswa.php">
+          <i class="fas fa-fw fa-file-invoice"></i>
+          <span>Bayar Kas</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/uas-web/siswa/siswa.php">
+          <i class="fas fa-fw fa-money-check"></i>
+          <span>Lapor Pengeluaran</span></a>
+      </li>
       <div class="sidebar-heading">
         KAS
       </div>
@@ -82,8 +92,8 @@
         </a>
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="/uas-web/laporan/pemasukan.php">Pemasukan</a>
-            <a class="collapse-item" href="/uas-web/laporan/pengeluaran.php">Pengeluaran</a>
+            <a class="collapse-item" href="/uas-web/pemasukan/pemasukan.php">Pemasukan</a>
+            <a class="collapse-item" href="/uas-web/pengeluaran/pengeluaran.php">Pengeluaran</a>
           </div>
         </div>
       </li>
