@@ -26,7 +26,7 @@
             <?php
               //Data mentah yang ditampilkan ke tabel
               include ('../koneksi.php');
-              $sql = "SELECT * FROM pengeluaran";
+              $sql = "SELECT * FROM pemasukan";
 
               $hasil = mysqli_query($kon,$sql);
               $no = 1;
@@ -34,7 +34,7 @@
             ?>
               <td><?php echo  $no;?></td>
               <td><?php echo  $r['tanggal']; ?></td>
-              <td>Rp.<?php echo number_format($r['total_bayar']); ?>,-</td>
+              <td>Rp.<?php echo  number_format($r['total_bayar']); ?>,-</td>
               <td><?php echo  $r['keterangan']; ?></td>
             <?php
               $no++;
