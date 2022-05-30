@@ -38,13 +38,13 @@
         <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
             <div class="nano">
                 <div class="nano-content">
-                    <div class="logo"><a href="/uas_web"><!-- <img src="assets/images/logo.png" alt="" /> --><span>Focus</span></a></div>
+                    <div class="logo"><a href="/uas-web"><!-- <img src="assets/images/logo.png" alt="" /> --><span>Focus</span></a></div>
                     <ul>
                         <li class="label">Main</li>
-                        <li><a href="/uas_web"><i class="ti-home"></i> Home </a></li>
+                        <li><a href="/uas-web"><i class="ti-home"></i> Home </a></li>
 
                         <li class="label">Apps</li>
-                        <li><a href="/ua-web/anggota/anggota.php"><i class="ti-user"></i> Anggota </a></li>
+                        <li><a href="/uas-web/anggota/anggota.php"><i class="ti-user"></i> Anggota </a></li>
                         <li><a href="/uas-web/kas/kas.php"><i class="ti-money"></i> Kas </a></li>
                         <li><a href="/uas-web/pengeluaran/pengeluaran.php"><i class="ti-clipboard"></i> Pengeluaran </a></li>
                         <li><a href="/uas-web/laporan/laporan.php"><i class="ti-book"></i> Laporan </a></li>
