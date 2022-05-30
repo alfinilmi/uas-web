@@ -21,16 +21,16 @@
         <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
 
         <!-- Styles -->
-        <link href="/uas_web/assets/css/lib/weather-icons.css" rel="stylesheet" />
-        <link href="/uas_web/assets/css/lib/owl.carousel.min.css" rel="stylesheet" />
-        <link href="/uas_web/assets/css/lib/owl.theme.default.min.css" rel="stylesheet" />
-        <link href="/uas_web/assets/css/lib/font-awesome.min.css" rel="stylesheet">
-        <link href="/uas_web/assets/css/lib/themify-icons.css" rel="stylesheet">
-        <link href="/uas_web/assets/css/lib/menubar/sidebar.css" rel="stylesheet">
-        <link href="/uas_web/assets/css/lib/bootstrap.min.css" rel="stylesheet">
+        <link href="/uas-web/assets/css/lib/weather-icons.css" rel="stylesheet" />
+        <link href="/uas-web/assets/css/lib/owl.carousel.min.css" rel="stylesheet" />
+        <link href="/uas-web/assets/css/lib/owl.theme.default.min.css" rel="stylesheet" />
+        <link href="/uas-web/assets/css/lib/font-awesome.min.css" rel="stylesheet">
+        <link href="/uas-web/assets/css/lib/themify-icons.css" rel="stylesheet">
+        <link href="/uas-web/assets/css/lib/menubar/sidebar.css" rel="stylesheet">
+        <link href="/uas-web/assets/css/lib/bootstrap.min.css" rel="stylesheet">
 
-        <link href="/uas_web/assets/css/lib/helper.css" rel="stylesheet">
-        <link href="/uas_web/assets/css/style.css" rel="stylesheet">
+        <link href="/uas-web/assets/css/lib/helper.css" rel="stylesheet">
+        <link href="/uas-web/assets/css/style.css" rel="stylesheet">
     </head>
 
     <body>
@@ -44,10 +44,10 @@
                         <li><a href="/uas_web"><i class="ti-home"></i> Home </a></li>
 
                         <li class="label">Apps</li>
-                        <li><a href="/uas_web/anggota/anggota.php"><i class="ti-user"></i> Anggota </a></li>
-                        <li><a href="/uas_web/kas/kas.php"><i class="ti-money"></i> Kas </a></li>
-                        <li><a href="/uas_web/pengeluaran/pengeluaran.php"><i class="ti-clipboard"></i> Pengeluaran </a></li>
-                        <li><a href="/uas_web/laporan/laporan.php"><i class="ti-book"></i> Laporan </a></li>
+                        <li><a href="/ua-web/anggota/anggota.php"><i class="ti-user"></i> Anggota </a></li>
+                        <li><a href="/uas-web/kas/kas.php"><i class="ti-money"></i> Kas </a></li>
+                        <li><a href="/uas-web/pengeluaran/pengeluaran.php"><i class="ti-clipboard"></i> Pengeluaran </a></li>
+                        <li><a href="/uas-web/laporan/laporan.php"><i class="ti-book"></i> Laporan </a></li>
                     </ul>
                 </div>
             </div>

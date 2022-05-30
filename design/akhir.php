@@ -17,18 +17,18 @@
             </form>
         </div>
         <!-- jquery vendor -->
-        <script src="/uas_web/assets/js/lib/jquery.min.js"></script>
-        <script src="/uas_web/assets/js/lib/jquery.nanoscroller.min.js"></script>
+        <script src="/uas-web/assets/js/lib/jquery.min.js"></script>
+        <script src="/uas-web/assets/js/lib/jquery.nanoscroller.min.js"></script>
         <!-- nano scroller -->
-        <script src="/uas_web/assets/js/lib/menubar/sidebar.js"></script>
-        <script src="/uas_web/assets/js/lib/preloader/pace.min.js"></script>
+        <script src="/uas-web/assets/js/lib/menubar/sidebar.js"></script>
+        <script src="/uas-web/assets/js/lib/preloader/pace.min.js"></script>
         <!-- sidebar -->
-        <script src="/uas_web/assets/js/lib/bootstrap.min.js"></script>
+        <script src="/uas-web/assets/js/lib/bootstrap.min.js"></script>
 
         <!-- bootstrap -->
 
-        <script src="/uas_web/assets/js/lib/circle-progress/circle-progress.min.js"></script>
-        <script src="/uas_web/assets/js/lib/circle-progress/circle-progress-init.js"></script>
+        <script src="/uas-web/assets/js/lib/circle-progress/circle-progress.min.js"></script>
+        <script src="/uas-web/assets/js/lib/circle-progress/circle-progress-init.js"></script>
 
         <script src="/uas_web/assets/js/lib/morris-chart/raphael-min.js"></script>
         <script src="/uas_web/assets/js/lib/morris-chart/morris.js"></script>
