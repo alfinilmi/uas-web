@@ -2,7 +2,7 @@
  
 $host="localhost";
 $user="root";
-$password="saifer";
+$password="";
 $db="webkas";
 
 $kon = mysqli_connect($host,$user,$password,$db);
