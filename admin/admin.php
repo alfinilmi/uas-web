@@ -20,7 +20,7 @@
 	                            <div class="card">
 	                                <div class="card-body">
 	                                    <div class="table-responsive">
-	                                    	<a href="#"><button type="button" class="btn btn-primary btn-flat btn-addon m-b-10 m-l-5"><i class="ti-plus"></i>Tambah Data</button></a>
+	                                    	<!-- <a href="#"><button type="button" class="btn btn-primary btn-flat btn-addon m-b-10 m-l-5"><i class="ti-plus"></i>Tambah Data</button></a> -->
 	                                        <table class="table table-bordered">
 	                                            <thead>
 	                                                <tr>
@@ -29,20 +29,31 @@
 														<th>Username</th>
 	                                                    <th>Password</th>
 														<th>Action</th>
-
 	                                                </tr>
 	                                            </thead>
-	                                            <tbody>
-	                                                <tr>
-	                                                    <th scope="row">1</th>
-	                                                    <td>Kalau mau ada warna</td>
-	                                                    <td class="color-primary">$21.56</td>
-	                                                </tr>
-	                                                <tr>
-	                                                    <th scope="row">2</th>
-	                                                    <td>Kalo gamau ada warna</td>
-	                                                    <td>$55.32</td>
-	                                                </tr>
+												<?php
+													//Data mentah yang ditampilkan ke tabel
+													include ('../koneksi.php');
+													$sql = "SELECT * FROM admin";
+
+													$hasil = mysqli_query($kon,$sql);
+													$no = 1;
+													while ($r = mysqli_fetch_array($hasil)) {
+													?>
+													<tr align='left'>
+													<td><?php echo  $no;?></td>
+													<td><?php echo  $r['id']; ?></td>
+													<td><?php echo  $r['uname']; ?></td>
+													<td><?php echo  $r['passw']; ?></td>
+													<td>
+													<a href="edit.php?id=<?php echo  $r['id']; ?>"><i class="fa fa-edit" title="edit" style="color:black"></i></a> |
+													<a href="hapus.php?id=<?php echo  $r['id']; ?>"> <i class="fa fa-eraser" title="hapus" style="color:black"></i></a>   
+													</td>
+													</tr>
+													<?php
+													$no++;
+													}
+												?>
 	                                            </tbody>
 	                                        </table>
 	                                    </div>
