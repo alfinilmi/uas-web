@@ -19,25 +19,48 @@
                                 </div> -->
 	                            <div class="card">
 	                                <div class="card-body">
+
+                                        <form method="post">
+                                            <select name="month" class="form-control mb-4" onchange="this.form.submit()">
+                                                <option value="0">Pilih Bulan...</option>
+                                                <option value="Januari">Januari</option>
+                                                <option value="Februari">Februari</option>
+                                                <option value="Maret">Maret</option>
+                                                <option value="April">April</option>
+                                                <option value="Mei">Mei</option>
+                                                <option value="Juni">Juni</option>
+                                                <option value="Juli">Juli</option>
+                                                <option value="Agustus">Agustus</option>
+                                                <option value="September">September</option>
+                                                <option value="Oktober">Oktober</option>
+                                                <option value="November">November</option>
+                                                <option value="Desember">Desember</option>
+                                            </select>
+                                        </form>
+
 	                                    <div class="table-responsive">
-	                                    	<a href="#"><button type="button" class="btn btn-primary btn-flat btn-addon m-b-10 m-l-5"><i class="ti-plus"></i>Tambah Data</button></a>
 	                                        <table class="table table-bordered">
 	                                            <thead>
 	                                                <tr>
 	                                                    <th>No</th>
-														<th>Id</th>
 														<th>Nama</th>
 	                                                    <th>Bulan</th>
                                                         <th>Pekan 1</th>
 	                                                    <th>Pekan 2</th>
                                                         <th>Pekan 3</th>
 	                                                    <th>Pekan 4</th>
+                                                        <th>Action</th>
 	                                                </tr>
 	                                            </thead>
 												<?php
+                                                    if(!isset($_POST['month'])){
+                                                        $sql = "select * from kas;";
+                                                    } else {
+                                                        $bulan = $_POST['month'];  // Storing Selected Value In Variable
+                                                        $sql = "select * from kas where bulan= '$bulan' group by id;";
+                                                    }
 													//Data mentah yang ditampilkan ke tabel
 													include ('../koneksi.php');
-													$sql = "SELECT * FROM kas";
 
 													$hasil = mysqli_query($kon,$sql);
 													$no = 1;
@@ -45,7 +68,6 @@
 													?>
 													<tr align='left'>
 													<td><?php echo  $no;?></td>
-													<td><?php echo  $r['id']; ?></td>
 													<td><?php echo  $r['nis']; ?></td>
 													<td><?php echo  $r['bulan']; ?></td>
                                                     <td><?php echo  $r['pekan1']; ?></td>
@@ -53,8 +75,7 @@
                                                     <td><?php echo  $r['pekan3']; ?></td>
 													<td><?php echo  $r['pekan4']; ?></td>
 													<td>
-													<a href="edit.php?id=<?php echo  $r['id']; ?>"><i class="fa fa-edit" title="edit" style="color:black"></i></a> |
-													<a href="hapus.php?id=<?php echo  $r['id']; ?>"> <i class="fa fa-eraser" title="hapus" style="color:black"></i></a>   
+													<a href="edit.php?id=<?php echo  $r['id']; ?>"><i class="fa fa-edit" title="edit" style="color:black"></i> Edit</a>
 													</td>
 													</tr>
 													<?php
