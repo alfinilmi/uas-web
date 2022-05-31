@@ -80,7 +80,7 @@ if(!isset($_SESSION['uname'])) {
           <span>Data Siswa</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/uas-web/siswa/siswa.php">
+        <a class="nav-link" href="/uas-web/kas/kas.php">
           <i class="fas fa-fw fa-file-invoice"></i>
           <span>Bayar Kas</span></a>
       </li>
