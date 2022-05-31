@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 30, 2022 at 08:16 AM
+-- Generation Time: May 31, 2022 at 04:40 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -25,6 +25,9 @@ DELIMITER $$
 --
 -- Procedures
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ditadmin` (IN `ids` INT, IN `unames` VARCHAR(50), IN `passwds` VARCHAR(20))  BEGIN update admin set uname = unames where id  = ids;
+end$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `tadmin` (IN `unames` VARCHAR(100), IN `passwds` VARCHAR(20))  begin
 insert into admin values (null,unames,passwds);
 end$$
@@ -44,6 +47,13 @@ CREATE TABLE `admin` (
   `uname` varchar(100) NOT NULL,
   `passw` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `uname`, `passw`) VALUES
+(1, 'mayushi', 'sandi');
 
 -- --------------------------------------------------------
 
@@ -79,7 +89,7 @@ CREATE TABLE `riwayat_keuangan` (
   `id` int(11) NOT NULL,
   `total_bayar` int(11) NOT NULL,
   `tanggal` date NOT NULL,
-  `status` varchar(10) NOT NULL,
+  `status` enum('masuk','keluar') NOT NULL,
   `keterangan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -168,7 +178,7 @@ ALTER TABLE `siswa`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `riwayat_keuangan`
