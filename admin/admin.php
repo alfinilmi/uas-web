@@ -3,21 +3,20 @@
 	                        <div class="page-header">
 	                            <div class="page-title">
 	                                <ol class="breadcrumb">
-	                                    <li class="breadcrumb-item"><a href="#">Halaman Anggota</a></li>
+	                                    <li class="breadcrumb-item"><a href="#">Halaman Admin</a></li>
 	                                </ol>
 	                            </div>
 	                        </div>
 	                    </div>
 	                    <!-- /# column -->
-	                </div>
 	                <!-- /row -->
 
 	                <section id="main-content">
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="card-title">
-                                    <h3 class="color-primary">Data Anggota</h3>
-                                </div>
+                                <!-- <div class="card-title">
+                                    <h3 class="color-primary">Data Admin</h3>
+                                </div> -->
 	                            <div class="card">
 	                                <div class="card-body">
 	                                    <div class="table-responsive">
@@ -25,9 +24,12 @@
 	                                        <table class="table table-bordered">
 	                                            <thead>
 	                                                <tr>
-	                                                    <th>No.</th>
-	                                                    <th>Nama</th>
-	                                                    <th>Jumlah</th>
+	                                                    <th>No</th>
+														<th>Id</th>
+														<th>Username</th>
+	                                                    <th>Password</th>
+														<th>Action</th>
+
 	                                                </tr>
 	                                            </thead>
 	                                            <tbody>
