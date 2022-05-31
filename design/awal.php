@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Aplikasi Kas</title>
-  
+  <link rel="icon" type="image/x-icon" href="/uas-web/assets/icon.png">
   <!-- JS JANGAN DIHAPUS DULU-->
   <!-- <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script> -->
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script> -->
@@ -43,7 +43,7 @@
       <hr class="sidebar-divider my-0">
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="/uas-web/">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -82,8 +82,8 @@
         </a>
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="/uas-web/laporan/pemasukan.php">Pemasukan</a>
-            <a class="collapse-item" href="/uas-web/laporan/pengeluaran.php">Pengeluaran</a>
+            <a class="collapse-item" href="/uas-web/kas/pemasukan.php">Pemasukan</a>
+            <a class="collapse-item" href="/uas-web/kas/pengeluaran.php">Pengeluaran</a>
           </div>
         </div>
       </li>
