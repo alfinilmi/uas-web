@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 03, 2022 at 11:35 AM
+-- Generation Time: Jun 03, 2022 at 01:19 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -27,6 +27,10 @@ DELIMITER $$
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ditadmin` (IN `ids` INT, IN `unames` VARCHAR(50), IN `passwds` VARCHAR(20))  BEGIN update admin set uname = unames where id  = ids;
 end$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ditkas` (IN `ids` INT, IN `niss` VARCHAR(50), IN `bulans` VARCHAR(20), IN `pekans1` VARCHAR(20), IN `pekans2` VARCHAR(20), IN `pekans3` VARCHAR(20), IN `pekans4` VARCHAR(20))  BEGIN
+    update kas set nis = niss , bulan = bulans, pekan1 = pekans1, pekan2 = pekans2, pekan3 = pekans3, pekan4 = pekans4 where id = ids;
+    end$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `tadmin` (IN `unames` VARCHAR(100), IN `passwds` VARCHAR(20))  begin
 insert into admin values (null,unames,passwds);
@@ -76,7 +80,7 @@ CREATE TABLE `kas` (
 --
 
 INSERT INTO `kas` (`id`, `nis`, `bulan`, `pekan1`, `pekan2`, `pekan3`, `pekan4`) VALUES
-(1, '2003982', 'Januari', '5000', '5000', '5000', '0'),
+(1, '2003982', 'Januari', '5000', '5000', '5000', '5000'),
 (2, '2003982', 'Februari', '0', '0', '0', '0'),
 (3, '2003982', 'Maret', '0', '0', '0', '0'),
 (4, '2003982', 'April', '0', '0', '0', '0'),
@@ -147,7 +151,8 @@ INSERT INTO `riwayat_keuangan` (`id`, `total_bayar`, `tanggal`, `status`, `keter
 (1, 50000, '2022-05-30', 'masuk', 'Sandi bayar kas'),
 (2, 10000, '2022-05-30', 'keluar', 'Membeli sapu, Membeli Alif dan Alfin, Membeli Kacamata'),
 (3, 20000, '2022-05-31', 'keluar', 'Ngejajanin ayang pake uang kas'),
-(4, 30000, '2022-05-31', 'masuk', 'Ayang bayar utang ke aku');
+(4, 30000, '2022-05-31', 'masuk', 'Ayang bayar utang ke aku'),
+(5, 20000, '2022-06-03', 'keluar', 'Cek lagi Laporin Pengeluaran');
 
 --
 -- Triggers `riwayat_keuangan`
@@ -172,7 +177,7 @@ CREATE TABLE `saldo` (
 --
 
 INSERT INTO `saldo` (`total`) VALUES
-(110000);
+(90000);
 
 -- --------------------------------------------------------
 
@@ -281,7 +286,7 @@ ALTER TABLE `kas`
 -- AUTO_INCREMENT for table `riwayat_keuangan`
 --
 ALTER TABLE `riwayat_keuangan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `siswa`
