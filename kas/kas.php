@@ -75,7 +75,8 @@
 							<td><?php echo  $r['pekan3']; ?></td>
 							<td><?php echo  $r['pekan4']; ?></td>
 							<td>
-							<a href="#myModal" class="btn btn-danger" data-toggle="modal">Edit</a> 
+							<a href="edit.php?id=<?php echo  $r['id']; ?>"><i class="fa fa-edit" title="edit" style="color:black"></i>Edit</a>
+							<!-- <a href="#myModal" class="btn btn-danger" data-toggle="modal">Edit</a>  -->
 							</td>
 							</tr>
 							<?php
@@ -90,9 +91,9 @@
 	</div>
 	<!-- /# column -->
 </div>
-                        <!-- /# row -->
-<!-- modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <!-- /# row
+modal -->
+<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -138,5 +139,5 @@
 	
     </div>
   </div>
-</div>
+</div> -->
 <?php include '../design/akhir.php'; ?>
