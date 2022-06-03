@@ -21,17 +21,16 @@
           <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
           <h6 class="m-0 font-weight-bold text-primary">Kas Tagihan</h6>
     </div>
-          
-            <input type="hidden" class="form-control" name="id" id="id" autocomplete="off"size="30" readonly>
             <tr>
                 <td>NIS</td>
                 <td>:</td>
+                <input type="hidden" name="id" value="<?php echo $d['id']?>"/>
                 <td><input type="text" class="form-control" name="nis" id="nis" autocomplete="off"  readonly value="<?php echo $d['nis']?>"></td>
             </tr>
             <tr>
                 <td>Bulan</td>
                 <td>:</td>
-                <td><input type="text" class="form-control" name="quantity" id="quantity" autocomplete="off" readonly required value="<?php echo $d['bulan']?>"></td>
+                <td><input type="text" class="form-control" name="bulan" id="bulan" autocomplete="off" readonly required value="<?php echo $d['bulan']?>"></td>
             </tr>
 
           </table>
@@ -49,27 +48,31 @@
         <tr>
             <td>Pekan 1</td>
             <td>:</td>
-            <td><select name="pekan" class="form-control" id="pekan" value="<?php echo $d['pekan1']?>"></td>
+            <td><select name="pekan1" class="form-control" id="pekan1" value="<?php echo $d['pekan1']?>"></td>
+                <option><?php echo $d['pekan1']?></option>
                 <option value="0">0</option>
                 <option value="5000">5000</option>
                 </select>
         </tr>
         <tr>
             <td>Pekan 2</td>
-            <td><select name="pekan" class="form-control" id="pekan" value="<?php echo $d['pekan2']?>"></td>
+            <td><select name="pekan2" class="form-control" id="pekan2" value="<?php echo $d['pekan2']?>"></td>
+                <option><?php echo $d['pekan2']?></option>
                 <option value="0">0</option>
                 <option value="5000">5000</option>
                 </select></tr>
         <tr>
             <td>Pekan 3</td>
-            <td><select name="pekan" class="form-control" id="pekan" value="<?php echo $d['pekan3']?>"></td>
+            <td><select name="pekan3" class="form-control" id="pekan3" value="<?php echo $d['pekan3']?>"></td>
+                <option><?php echo $d['pekan3']?></option>
                 <option value="0">0</option>
                 <option value="5000">5000</option>
                 </select></tr>
         <tr>
             <td>Pekan 4</td>
             <td>:</td>
-            <td><select name="pekan" class="form-control" id="pekan" value="<?php echo $d['pekan4']?>"></td>
+            <td><select name="pekan4" class="form-control" id="pekan4" value="<?php echo $d['pekan4']?>"></td>
+                <option><?php echo $d['pekan4']?></option>
                 <option value="0">0</option>
                 <option value="5000">5000</option>
                 </select></tr>
