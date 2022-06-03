@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 31, 2022 at 04:40 AM
+-- Generation Time: Jun 03, 2022 at 02:19 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -99,7 +99,17 @@ CREATE TABLE `riwayat_keuangan` (
 
 INSERT INTO `riwayat_keuangan` (`id`, `total_bayar`, `tanggal`, `status`, `keterangan`) VALUES
 (1, 50000, '2022-05-30', 'masuk', 'Sandi bayar kas'),
-(2, 10000, '2022-05-30', 'keluar', 'Membeli sapu, Membeli Alif dan Alfin, Membeli Kacamata');
+(2, 10000, '2022-05-30', 'keluar', 'Membeli sapu, Membeli Alif dan Alfin, Membeli Kacamata'),
+(3, 20000, '2022-05-31', 'keluar', 'Ngejajanin ayang pake uang kas'),
+(4, 30000, '2022-05-31', 'masuk', 'Ayang bayar utang ke aku');
+
+--
+-- Triggers `riwayat_keuangan`
+--
+DELIMITER $$
+CREATE TRIGGER `update_saldo` AFTER INSERT ON `riwayat_keuangan` FOR EACH ROW BEGIN  IF new.status = "masuk" THEN UPDATE saldo SET total = total+new.total_bayar; ELSEIF new.status = "keluar" THEN UPDATE saldo SET total = total-new.total_bayar; END IF; END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -110,6 +120,13 @@ INSERT INTO `riwayat_keuangan` (`id`, `total_bayar`, `tanggal`, `status`, `keter
 CREATE TABLE `saldo` (
   `total` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `saldo`
+--
+
+INSERT INTO `saldo` (`total`) VALUES
+(110000);
 
 -- --------------------------------------------------------
 
@@ -184,7 +201,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `riwayat_keuangan`
 --
 ALTER TABLE `riwayat_keuangan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `siswa`
