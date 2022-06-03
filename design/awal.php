@@ -85,7 +85,7 @@ if(!isset($_SESSION['uname'])) {
           <span>Bayar Kas</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/uas-web/siswa/siswa.php">
+        <a class="nav-link" href="/uas-web/input-pengeluaran/pengeluaran.php">
           <i class="fas fa-fw fa-money-check"></i>
           <span>Lapor Pengeluaran</span></a>
       </li>
@@ -103,15 +103,6 @@ if(!isset($_SESSION['uname'])) {
             <a class="collapse-item" href="/uas-web/pengeluaran/pengeluaran.php">Pengeluaran</a>
           </div>
         </div>
-      </li>
-      
-      <div class="sidebar-heading">
-        REPORT
-      </div>
-      <li class="nav-item">
-        <a class="nav-link" href="/uas-web/laporan/laporan.php">
-          <i class="fas fa-fw fa-copy"></i>
-          <span>Laporan</span></a>
       </li>
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">

@@ -32,10 +32,12 @@
               $no = 1;
               while ($r = mysqli_fetch_array($hasil)) {
             ?>
+            <tr>
               <td><?php echo  $no;?></td>
               <td><?php echo  $r['tanggal']; ?></td>
               <td>Rp.<?php echo number_format($r['total_bayar']); ?>,-</td>
               <td><?php echo  $r['keterangan']; ?></td>
+            </tr>
             <?php
               $no++;
               }
