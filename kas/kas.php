@@ -39,8 +39,8 @@
 				</form>
 
 				<div class="table-responsive">
-					<table class="table table-bordered">
-						<thead>
+					<table class="table table-borderless" id="dataTable" width="100%" cellspacing="0">
+        				<thead class="thead-light">
 							<tr>
 								<th>No</th>
 								<th>Nama</th>
