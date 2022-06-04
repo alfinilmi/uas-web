@@ -12,18 +12,18 @@
                 <form action="ppengeluaran.php" method="post">
                     <div class="form-group">
                         <label>Total Bayar</label>
-                        <input type="number" class="form-control" name="total" placeholder="Dalam Rupiah">
+                        <input type="number" class="form-control" name="total" placeholder="Dalam Rupiah" require>
                     </div>
                     <div class="form-group">
                         <label>Tanggal</label>
-                        <input type="date" class="form-control" name="tgl">
+                        <input type="date" class="form-control" name="tgl" require>
                     </div>
                     </div>
                     <div class="form-group">
                         <label>Keterangan</label>
-                        <textarea class="form-control" name="ket" rows="5"></textarea>
+                        <textarea class="form-control" name="ket" rows="5" require></textarea>
                     </div>
-                    <button type="submit" name="tambah" class="btn btn-primary">Lapor</button>
+                     <button type="submit" name="tambah" class="btn btn-primary">Lapor</button>
                 </form>
             </div>
         </div>

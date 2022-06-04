@@ -54,10 +54,10 @@
 						</thead>
 						<?php
 							if(!isset($_POST['month'])){
-								$sql = "select * from kas;";
+								$sql = "select * from viewkas;";
 							} else {
 								$bulan = $_POST['month'];  // Storing Selected Value In Variable
-								$sql = "select * from kas where bulan= '$bulan' group by id;";
+								$sql = "select * from viewkas where bulan= '$bulan' group by id;";
 							}
 							//Data mentah yang ditampilkan ke tabel
 							include ('../koneksi.php');
@@ -68,12 +68,12 @@
 							?>
 							<tr align='left'>
 							<td><?php echo  $no;?></td>
-							<td><?php echo  $r['nis']; ?></td>
+							<td><?php echo  $r['name']; ?></td>
 							<td><?php echo  $r['bulan']; ?></td>
-							<td><?php echo  $r['pekan1']; ?></td>
-							<td><?php echo  $r['pekan2']; ?></td>
-							<td><?php echo  $r['pekan3']; ?></td>
-							<td><?php echo  $r['pekan4']; ?></td>
+							<td>RP.<?php echo  number_format($r['pekan1']); ?></td>
+							<td>RP.<?php echo  number_format($r['pekan2']); ?></td>
+							<td>RP.<?php echo  number_format($r['pekan3']); ?></td>
+							<td>RP.<?php echo  number_format($r['pekan4']); ?></td>
 							<td>
 							<a href="edit.php?id=<?php echo  $r['id']; ?>"><i class="fa fa-edit" title="edit" style="color:black"></i>Edit</a>
 							<!-- <a href="#myModal" class="btn btn-danger" data-toggle="modal">Edit</a>  -->

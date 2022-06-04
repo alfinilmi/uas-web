@@ -10,6 +10,7 @@ $pekan1 = $_POST['pekan1'];
 $pekan2 = $_POST['pekan2'];
 $pekan3 = $_POST['pekan3'];
 $pekan4 = $_POST['pekan4'];
+// $tot = $_POST['total_bayar'];
  
 // update data ke database
 // mysqli_query($kon,"update kas set nis='$nis', bulan='$bulan', pekan1='$pekan1', pekan2='$pekan2', pekan3='$pekan3',
@@ -18,6 +19,7 @@ $pekan4 = $_POST['pekan4'];
 // // mengalihkan halaman kembali ke index.php
 // header("location:kas.php");
 $sql = "CALL ditkas('$id','$nis','$bulan','$pekan1','$pekan2','$pekan3','$pekan4')";
+// $crot = "INSERT INTO riwayat_keuangan (total_bayar, tanggal, status, keterangan) VALUE ('$Id', '$nama', '$username', '$password', '$email')";;
     $query = mysqli_query($kon, $sql);
     
     if( $query ) {
