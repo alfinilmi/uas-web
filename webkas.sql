@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 04, 2022 at 05:34 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- Host: localhost:3306
+-- Generation Time: Jun 03, 2022 at 11:35 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -21,23 +21,11 @@ SET time_zone = "+00:00";
 -- Database: `webkas`
 --
 
-CREATE DATABASE webkas;
-
-USE webkas;
-
-
 DELIMITER $$
 --
 -- Procedures
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ditadmin` (IN `ids` INT, IN `unames` VARCHAR(50), IN `passwds` VARCHAR(20))  BEGIN update admin set uname = unames where id  = ids;
-end$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `ditkas` (IN `ids` INT, IN `niss` VARCHAR(50), IN `bulans` VARCHAR(20), IN `pekans1` VARCHAR(20), IN `pekans2` VARCHAR(20), IN `pekans3` VARCHAR(20), IN `pekans4` VARCHAR(20))  BEGIN
-
-UPDATE kas set nis = niss , bulan = bulans, pekan1 = pekans1, pekan2 = pekans2, pekan3 = pekans3, pekan4 = pekans4 where id = ids;
-
-INSERT INTO riwayat_keuangan VALUES (null,5000,now(),"masuk","Bayar Kas");
 end$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `tadmin` (IN `unames` VARCHAR(100), IN `passwds` VARCHAR(20))  begin
@@ -88,66 +76,30 @@ CREATE TABLE `kas` (
 --
 
 INSERT INTO `kas` (`id`, `nis`, `bulan`, `pekan1`, `pekan2`, `pekan3`, `pekan4`) VALUES
-(1, ' 2004212', 'Januari', '5000', '5000', '0', '0'),
-(2, ' 2004212', 'Februari', '5000', '5000', '0', '0'),
-(3, ' 2004212', 'Maret', '5000', '5000', '0', '0'),
-(4, ' 2004212', 'April', '5000', '0', '0', '0'),
-(5, ' 2004212', 'Mei', '0', '0', '0', '0'),
-(6, ' 2004212', 'Juni', '0', '0', '0', '0'),
-(7, ' 2004212', 'Juli', '0', '0', '0', '0'),
-(8, ' 2004212', 'Agustus', '0', '0', '0', '0'),
-(9, ' 2004212', 'September', '0', '0', '0', '0'),
-(10, ' 2004212', 'Oktober', '0', '0', '0', '0'),
-(11, ' 2004212', 'November', '0', '0', '0', '0'),
-(12, ' 2004212', 'Desember', '0', '0', '0', '0'),
-(13, '2003982', 'Januari', '5000', '0', '0', '0'),
-(14, '2003982', 'Februari', '0', '0', '0', '0'),
-(15, '2003982', 'Maret', '0', '0', '0', '0'),
-(16, '2003982', 'April', '0', '0', '0', '0'),
-(17, '2003982', 'Mei', '0', '0', '0', '0'),
-(18, '2003982', 'Juni', '0', '0', '0', '0'),
-(19, '2003982', 'Juli', '0', '0', '0', '0'),
-(20, '2003982', 'Agustus', '0', '0', '0', '0'),
-(21, '2003982', 'September', '0', '0', '0', '0'),
-(22, '2003982', 'Oktober', '0', '0', '0', '0'),
-(23, '2003982', 'November', '0', '0', '0', '0'),
-(24, '2003982', 'Desember', '0', '0', '0', '0'),
-(25, '2001711', 'Januari', '5000', '0', '0', '0'),
-(26, '2001711', 'Februari', '5000', '0', '0', '0'),
-(27, '2001711', 'Maret', '5000', '0', '0', '0'),
-(28, '2001711', 'April', '0', '0', '0', '0'),
-(29, '2001711', 'Mei', '0', '0', '0', '0'),
-(30, '2001711', 'Juni', '0', '0', '0', '0'),
-(31, '2001711', 'Juli', '0', '0', '0', '0'),
-(32, '2001711', 'Agustus', '0', '0', '0', '0'),
-(33, '2001711', 'September', '0', '0', '0', '0'),
-(34, '2001711', 'Oktober', '0', '0', '0', '0'),
-(35, '2001711', 'November', '0', '0', '0', '0'),
-(36, '2001711', 'Desember', '0', '0', '0', '0'),
-(37, '2003918', 'Januari', '5000', '0', '0', '0'),
-(38, '2003918', 'Februari', '0', '0', '0', '0'),
-(39, '2003918', 'Maret', '0', '0', '0', '0'),
-(40, '2003918', 'April', '0', '0', '0', '0'),
-(41, '2003918', 'Mei', '0', '0', '0', '0'),
-(42, '2003918', 'Juni', '0', '0', '0', '0'),
-(43, '2003918', 'Juli', '0', '0', '0', '0'),
-(44, '2003918', 'Agustus', '0', '0', '0', '0'),
-(45, '2003918', 'September', '0', '0', '0', '0'),
-(46, '2003918', 'Oktober', '0', '0', '0', '0'),
-(47, '2003918', 'November', '0', '0', '0', '0'),
-(48, '2003918', 'Desember', '0', '0', '0', '0');
-
---
--- Triggers `kas`
---
-DELIMITER $$
-CREATE TRIGGER `sumkas` AFTER UPDATE ON `kas` FOR EACH ROW begin
-declare totals int DEFAULT 0;
-select sum(pekan1+pekan2+pekan3+pekan4) into totals from kas;
-update saldo set total = totals;
-end
-$$
-DELIMITER ;
+(1, '2003982', 'Januari', '5000', '5000', '5000', '0'),
+(2, '2003982', 'Februari', '0', '0', '0', '0'),
+(3, '2003982', 'Maret', '0', '0', '0', '0'),
+(4, '2003982', 'April', '0', '0', '0', '0'),
+(5, '2003982', 'Mei', '0', '0', '0', '0'),
+(6, '2003982', 'Juni', '0', '0', '0', '0'),
+(7, '2003982', 'Juli', '0', '0', '0', '0'),
+(8, '2003982', 'Agustus', '0', '0', '0', '0'),
+(9, '2003982', 'September', '0', '0', '0', '0'),
+(10, '2003982', 'Oktober', '0', '0', '0', '0'),
+(11, '2003982', 'November', '0', '0', '0', '0'),
+(12, '2003982', 'Desember', '0', '0', '0', '0'),
+(13, '2004212', 'Januari', '0', '0', '0', '0'),
+(14, '2004212', 'Februari', '0', '0', '0', '0'),
+(15, '2004212', 'Maret', '0', '0', '0', '0'),
+(16, '2004212', 'April', '0', '0', '0', '0'),
+(17, '2004212', 'Mei', '0', '0', '0', '0'),
+(18, '2004212', 'Juni', '0', '0', '0', '0'),
+(19, '2004212', 'Juli', '0', '0', '0', '0'),
+(20, '2004212', 'Agustus', '0', '0', '0', '0'),
+(21, '2004212', 'September', '0', '0', '0', '0'),
+(22, '2004212', 'Oktober', '0', '0', '0', '0'),
+(23, '2004212', 'November', '0', '0', '0', '0'),
+(24, '2004212', 'Desember', '0', '0', '0', '0');
 
 -- --------------------------------------------------------
 
@@ -192,10 +144,10 @@ CREATE TABLE `riwayat_keuangan` (
 --
 
 INSERT INTO `riwayat_keuangan` (`id`, `total_bayar`, `tanggal`, `status`, `keterangan`) VALUES
-(1, 20000, '2022-06-04', 'keluar', 'Pembelian Spidol dan tinta'),
-(2, 10000, '2022-06-04', 'keluar', 'Beli penghapus'),
-(3, 5000, '2022-06-04', 'masuk', 'Bayar Kas'),
-(4, 5000, '2022-06-04', 'masuk', 'new.nis, Bayar Kas');
+(1, 50000, '2022-05-30', 'masuk', 'Sandi bayar kas'),
+(2, 10000, '2022-05-30', 'keluar', 'Membeli sapu, Membeli Alif dan Alfin, Membeli Kacamata'),
+(3, 20000, '2022-05-31', 'keluar', 'Ngejajanin ayang pake uang kas'),
+(4, 30000, '2022-05-31', 'masuk', 'Ayang bayar utang ke aku');
 
 --
 -- Triggers `riwayat_keuangan`
@@ -212,7 +164,7 @@ DELIMITER ;
 --
 
 CREATE TABLE `saldo` (
-  `total` int(11) NOT NULL DEFAULT 0
+  `total` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -220,7 +172,7 @@ CREATE TABLE `saldo` (
 --
 
 INSERT INTO `saldo` (`total`) VALUES
-(65000);
+(110000);
 
 -- --------------------------------------------------------
 
@@ -239,17 +191,14 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`id`, `nis`, `name`) VALUES
-(1, ' 2004212', 'Alfin MI'),
-(2, '2003982', 'Alifta FN'),
-(3, '2001711', 'Irham NA'),
-(4, '2003918', 'Sandi FF');
+(1, '2003918', 'Sandi Faisal Ferdiansyah');
 
 --
 -- Triggers `siswa`
 --
 DELIMITER $$
 CREATE TRIGGER `templateBayar` AFTER INSERT ON `siswa` FOR EACH ROW BEGIN
-INSERT INTO kas (nis, bulan) VALUES 
+INSERT INTO bayar (nis, bulan) VALUES 
 (new.nis, 'Januari'),
 (new.nis, 'Februari'),
 (new.nis, 'Maret'),
@@ -269,22 +218,6 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `viewkas`
--- (See below for the actual view)
---
-CREATE TABLE `viewkas` (
-`name` varchar(100)
-,`id` int(11)
-,`bulan` varchar(10)
-,`pekan1` varchar(50)
-,`pekan2` varchar(50)
-,`pekan3` varchar(50)
-,`pekan4` varchar(50)
-);
-
--- --------------------------------------------------------
-
---
 -- Structure for view `pemasukan`
 --
 DROP TABLE IF EXISTS `pemasukan`;
@@ -299,16 +232,6 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `pengeluaran`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `pengeluaran`  AS SELECT `riwayat_keuangan`.`tanggal` AS `tanggal`, `riwayat_keuangan`.`total_bayar` AS `total_bayar`, `riwayat_keuangan`.`keterangan` AS `keterangan` FROM `riwayat_keuangan` WHERE `riwayat_keuangan`.`status` = 'keluar' ;
-
--- --------------------------------------------------------
-
-
---
--- Structure for view `viewkas`
---
-DROP TABLE IF EXISTS `viewkas`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `viewkas`  AS SELECT `siswa`.`name` AS `name`, `kas`.`id` AS `id`, `kas`.`bulan` AS `bulan`, `kas`.`pekan1` AS `pekan1`, `kas`.`pekan2` AS `pekan2`, `kas`.`pekan3` AS `pekan3`, `kas`.`pekan4` AS `pekan4` FROM (`siswa` join `kas` on(`kas`.`nis` = `siswa`.`nis`)) GROUP BY `kas`.`id` ;
 
 --
 -- Indexes for dumped tables
@@ -352,7 +275,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `kas`
 --
 ALTER TABLE `kas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `riwayat_keuangan`
@@ -364,7 +287,7 @@ ALTER TABLE `riwayat_keuangan`
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
