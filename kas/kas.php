@@ -57,7 +57,7 @@
 								$sql = "select * from viewkas;";
 							} else {
 								$bulan = $_POST['month'];  // Storing Selected Value In Variable
-								$sql = "select * from viewkas where bulan= '$bulan' group by id;";
+								$sql = "select * from viewkas where bulan='$bulan' group by id;";
 							}
 							//Data mentah yang ditampilkan ke tabel
 							include ('../koneksi.php');

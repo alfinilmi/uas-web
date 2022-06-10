@@ -28,7 +28,7 @@
             <td>Username</td>
             <td>:</td>
             <input type="hidden" name="id" value="<?php echo $d['id']?>"/>
-            <td><input type="text" class="form-control" name="uname" id="uname" autocomplete="off" size="30" value="<?php echo $d['uname']?>" required></td>
+            <td><input type="text" class="form-control" name="uname" id="uname" autocomplete="off" size="30" value="<?php echo $d['uname']?>" disabled></td>
         </tr>
         <tr>
             <td>Password</td>

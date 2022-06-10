@@ -21,6 +21,11 @@ SET time_zone = "+00:00";
 -- Database: `webkas`
 --
 
+CREATE DATABASE webkas;
+
+USE webkas;
+
+
 DELIMITER $$
 --
 -- Procedures
@@ -171,18 +176,6 @@ CREATE TABLE `pengeluaran` (
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `ranking`
--- (See below for the actual view)
---
-CREATE TABLE `ranking` (
-`name` varchar(100)
-,`total` double
-,`RANKING` bigint(21)
-);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `riwayat_keuangan`
 --
 
@@ -309,14 +302,6 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 
 -- --------------------------------------------------------
 
---
--- Structure for view `ranking`
---
-DROP TABLE IF EXISTS `ranking`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `ranking`  AS SELECT `siswa`.`name` AS `name`, sum(`kas`.`pekan1` + `kas`.`pekan2` + `kas`.`pekan3` + `kas`.`pekan4`) AS `total`, dense_rank()  ( partition by `kas`.`bulan` order by sum(`kas`.`pekan1` + `kas`.`pekan2` + `kas`.`pekan3` + `kas`.`pekan4`) desc) AS `over` FROM (`kas` join `siswa` on(`kas`.`nis` = `siswa`.`nis`)) GROUP BY `kas`.`nis` ORDER BY dense_rank()  ( partition by `kas`.`bulan` order by sum(`kas`.`pekan1` + `kas`.`pekan2` + `kas`.`pekan3` + `kas`.`pekan4`) desc) AS `over` ASC ;
-
--- --------------------------------------------------------
 
 --
 -- Structure for view `viewkas`
