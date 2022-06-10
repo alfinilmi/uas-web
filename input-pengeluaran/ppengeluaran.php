@@ -6,19 +6,38 @@ if (isset ($_POST['tambah'])){
     $total = $_POST['total'];
     $tgl= $_POST['tgl'];
     $ket = $_POST['ket'];
-    $status = "keluar";
 
-    //query pake procedure
-    $sql = "INSERT into riwayat_keuangan values (NULL, '$total', '$tgl', '$status', '$ket')";
-    $query = mysqli_query($kon, $sql);
-    
-    if( $query ) {
-        // kalau berhasil alihkan ke halaman sebelumnya dengan status=sukses
-        header('Location: ../pengeluaran/pengeluaran.php?status=sukses');
-    } else {
-        // kalau gagal alihkan ke halaman indek.php dengan status=gagal
-        header('Location: pengeluaran.php?status=gagal');
+    // query...
+    // $sql = "INSERT into riwayat_keuangan values (NULL, '$total', '$tgl', 'keluar', '$ket')";
+    // $query = mysqli_query($kon, $sql);
+
+    // if( $query ) {
+    //     // kalau berhasil alihkan ke halaman sebelumnya dengan status=sukses
+    //     header('Location: ../pengeluaran/pengeluaran.php?status=sukses');
+    // } else {
+    //     // kalau gagal alihkan ke halaman indek.php dengan status=gagal
+    //     header('Location: pengeluaran.php?status=gagal');
+    // }
+
+    // coba pake TRANSACTION
+    mysqli_begin_transaction($kon);
+
+    try {
+        /* Insert some values */
+        $sql = "INSERT into riwayat_keuangan values (NULL, '$total', '$tgl', 'keluar', '$ket')";
+        $query = mysqli_query($kon, $sql);
+
+        mysqli_commit($kon);
+        header("location: ../pengeluaran/pengeluaran.php");
+    } catch (mysqli_sql_exception $exception) {
+        mysqli_rollback($kon);
+        
+        header("location: pengeluaran.php");
+        throw $exception;
+
     }
+    
+    
 }
 
 ?>
