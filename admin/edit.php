@@ -35,7 +35,7 @@
             <td>:</td>
             <td><input type="text" class="form-control" name="passw" id="passw" autocomplete="off" size="30" value="<?php echo $d['passw']?>" required></td>
         </tr> 
-        <td><input type="submit" class="btn btn-primary" name="tambah" value="Tambah">
+        <td><input type="submit" class="btn btn-primary" name="tambah" value="Simpan">
         <input type="button" name="batal" class="btn btn-danger"  value="Batal" onClick="javascript:history.back()"></td>
     </tr>
     </div>

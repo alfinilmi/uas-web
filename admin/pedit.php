@@ -15,10 +15,14 @@
     
     if( $query ) {
         // kalau berhasil alihkan ke halaman index.php dengan status=sukses
-        header('Location: admin.php?status=sukses');
+        // header('Location: admin.php?status=sukses');
+	echo '<script>alert("Edit Data Berhasil!")</script>';
+    echo '<script>window.location = "./admin.php"</script>';
     } else {
         // kalau gagal alihkan ke halaman indek.php dengan status=gagal
-        header('Location: edit.php?status=gagal');
+        // header('Location: edit.php?status=gagal');
+	echo '<script>alert("Edit data Gagal :(")</script>';
+    echo '<script>window.location = "./edit.php"</script>';
     }
 // }
 ?>

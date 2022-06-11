@@ -20,9 +20,13 @@ $hsl = mysqli_fetch_array($sql);
 if ($hsl['uname']) {
 	// Smpan sesi
 	$_SESSION['uname'] = $hsl ['uname'];
-	header("location: utama.php");
+	echo '<script>alert("Login Berhasil!")</script>';
+    echo '<script>window.location = "utama.php"</script>';
+	// header("location: utama.php");
 }else {
-	header("location:index.php");
+	echo '<script>alert("Username atau Password Salah!")</script>';
+    echo '<script>window.location = "index.php"</script>';
+	// header("location:index.php");
 }
 
 ?>

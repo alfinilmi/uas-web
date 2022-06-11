@@ -82,7 +82,7 @@
 </div>
 </div>
 <center><div class="col-xl-3 col-lg-4">
-<input type="submit" class="btn btn-primary" name="tambah" value="Tambah">
+<input type="submit" class="btn btn-primary" name="tambah" value="Update">
 <input type="button" name="batal" class="btn btn-danger"  value="Batal" onClick="javascript:history.back()">
 </div> </center>
 <!-- /.container-fluid -->

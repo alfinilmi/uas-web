@@ -28,13 +28,16 @@ if (isset ($_POST['tambah'])){
         $query = mysqli_query($kon, $sql);
 
         mysqli_commit($kon);
-        header("location: ../pengeluaran/pengeluaran.php");
+        // header("location: ../pengeluaran/pengeluaran.php");
+        echo '<script>alert("Pelaporan Berhasil!")</script>';
+        echo '<script>window.location = "../pengeluaran/pengeluaran.php"</script>';
+        
     } catch (mysqli_sql_exception $exception) {
         mysqli_rollback($kon);
-        
-        header("location: pengeluaran.php");
+        // header("location: pengeluaran.php");
+        echo '<script>alert("Pelaporan Gagal!")</script>';
+        echo '<script>window.location = "./pengeluaran.php"</script>';
         throw $exception;
-
     }
     
     

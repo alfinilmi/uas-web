@@ -19,8 +19,8 @@
 		</div> -->
 		<div class="card">
 			<div class="card-body">
-
 				<div class="table-responsive">
+					<a href="tambah.php"><button type="button" class="btn btn-primary btn-flat btn-addon m-b-10 m-l-5"><i class="ti-plus"></i>Tambah Data</button></a>
 					<table class="table table-bordered">
 						<thead>
 							<tr>
@@ -38,15 +38,16 @@
 
               $hasil = mysqli_query($kon,$sql);
               $no = 1;
-              while ($r = mysqli_fetch_array($hasil)) {
+              while ($d = mysqli_fetch_array($hasil)) {
             ?>
 							<tr align='left'>
 							<td><?php echo  $no;?></td>
-							<td><?php echo  $r['id']; ?></td>
-							<td><?php echo  $r['nis']; ?></td>
-							<td><?php echo  $r['name']; ?></td>
+							<td><?php echo  $d['id']; ?></td>
+							<td><?php echo  $d['nis']; ?></td>
+							<td><?php echo  $d['name']; ?></td>
 							<td>
-							<a href="#myModal" class="btn btn-danger" data-toggle="modal">Edit</a> 
+							<a href="edit.php?id=<?php echo  $d['id']; ?>"><i class="fa fa-edit" title="edit" style="color:black"></i>Edit</a>
+							<a href="hapus.php?id=<?php echo  $d['id']; ?>"> <i class="fa fa-eraser" title="hapus" style="color:black"></i>Hapus</a>
 							</td>
 							</tr>
 							<?php
@@ -61,37 +62,5 @@
 	</div>
 	<!-- /# column -->
 </div>
-                        <!-- /# row -->
-<!-- modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Masukan Nama Siswa</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-	  <form action="pedit.php" method="post">
-	  
-	  <input type="hidden" name="id" value="<?php echo $r['id']?>"/>
-      <div class="modal-body">
-	 	 	<div class="form-group">
-			<label for="nis" class="">NIS :</label>
-			<input type="text" id="nis" class="form-control" name="nis" value="<?= $r['nis']; ?>" required autofocus>
-		</div>
-      <div class="form-group">
-			<label for="name" class="">Nama :</label>
-			<input type="text" id="name" class="form-control" name="name" value="<?= $r['name']; ?>" required autofocus>
-			</div>
-     </div>
-	  </form>
-		<div class="modal-footer">
-		<button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
-		<button type="submit" name="tambah" class="btn btn-primary">SUBMIT</button>
-      	</div>
-	
-    </div>
-  </div>
-</div>
+
 <?php include '../design/akhir.php'; ?>

@@ -55,7 +55,7 @@ if(isset($_SESSION['uname'])) {
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" placeholder="Masukan Password ..." name="passw" required>
                     </div>
-                    <button class="btn btn-dark btn-user btn-block"> Login</button>
+                    <button class="btn btn-dark btn-user btn-block">Login</button>
 
                   </form>
                   <!-- <hr> -->
@@ -73,19 +73,19 @@ if(isset($_SESSION['uname'])) {
 
 <!-- Bootstrap core JavaScript-->
 <script src="/uas-web/assets/vendor/jquery/jquery.min.js"></script>
-  <script src="/uas-web/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- Core plugin JavaScript-->
-  <script src="/uas-web/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <!-- Custom scripts for all pages-->
-  <script src="/uas-web/assets/js/sb-admin-2.min.js"></script>
-  <!-- Page level plugins -->
-  <script src="/uas-web/assets/vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="/uas-web/assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-  <script src="/uas-web/assets/vendor/chart.js/Chart.min.js"></script>
-  <!-- Page level custom scripts -->
-  <script src="/uas-web/assets/js/demo/chart-area-demo.js"></script>
-  <script src="/uas-web/assets/js/demo/chart-pie-demo.js"></script>
-  <script src="/uas-web/assets/js/demo/datatables-demo.js"></script>
+<script src="/uas-web/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="/uas-web/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Custom scripts for all pages-->
+<script src="/uas-web/assets/js/sb-admin-2.min.js"></script>
+<!-- Page level plugins -->
+<script src="/uas-web/assets/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="/uas-web/assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="/uas-web/assets/vendor/chart.js/Chart.min.js"></script>
+<!-- Page level custom scripts -->
+<script src="/uas-web/assets/js/demo/chart-area-demo.js"></script>
+<script src="/uas-web/assets/js/demo/chart-pie-demo.js"></script>
+<script src="/uas-web/assets/js/demo/datatables-demo.js"></script>
 
 
 </body>

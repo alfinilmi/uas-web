@@ -24,9 +24,13 @@ $sql = "CALL ditkas('$id','$nis','$bulan','$pekan1','$pekan2','$pekan3','$pekan4
     
     if( $query ) {
         // kalau berhasil alihkan ke halaman index.php dengan status=sukses
-        header('Location: kas.php?status=sukses');
+        // header('Location: kas.php?status=sukses');
+	echo '<script>alert("Berhasil!")</script>';
+    echo '<script>window.location = "./kas.php"</script>';
     } else {
         // kalau gagal alihkan ke halaman indek.php dengan status=gagal
-        header('Location: edit.php?status=gagal');
+        // header('Location: edit.php?status=gagal');
+	echo '<script>alert("Gagal :(")</script>';
+    echo '<script>window.location = "./edit.php"</script>';
     }
 ?>
