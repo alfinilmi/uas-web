@@ -12,12 +12,12 @@ if (isset ($_POST['tambah'])){
     
     if( $query ) {
         // kalau berhasil alihkan ke halaman index.php dengan status=sukses
-        // header('Location: siswa.php?status=sukses');
+        header('Location: siswa.php?status=sukses');
 	echo '<script>alert("Tambah Data Berhasil!")</script>';
     echo '<script>window.location = "./siswa.php"</script>';
     } else {
         // kalau gagal alihkan ke halaman indek.php dengan status=gagal
-        // header('Location: siswa.php?status=gagal');
+        header('Location: siswa.php?status=gagal');
 	echo '<script>alert("Tambah Data Gagal :(")</script>';
     echo '<script>window.location = "./siswa.php"</script>';
     }

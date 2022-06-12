@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 10, 2022 at 03:35 PM
+-- Generation Time: Jun 12, 2022 at 03:34 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -83,9 +83,9 @@ CREATE TABLE `kas` (
 --
 
 INSERT INTO `kas` (`id`, `nis`, `bulan`, `pekan1`, `pekan2`, `pekan3`, `pekan4`) VALUES
-(1, '2003918', 'Januari', '5000', '5000', '5000', '5000'),
+(1, '2003918', 'Januari', '5000', '5000', '5000', '0'),
 (2, '2003918', 'Februari', '5000', '5000', '5000', '5000'),
-(3, '2003918', 'Maret', '0', '0', '0', '0'),
+(3, '2003918', 'Maret', '5000', '5000', '0', '0'),
 (4, '2003918', 'April', '0', '0', '0', '0'),
 (5, '2003918', 'Mei', '0', '0', '0', '0'),
 (6, '2003918', 'Juni', '0', '0', '0', '0'),
@@ -150,11 +150,11 @@ CREATE TABLE `pengeluaran` (
 -- Stand-in structure for view `ranking`
 -- (See below for the actual view)
 --
-CREATE TABLE `ranking` (
-`name` varchar(100)
-,`total` double
-,`RANKING` bigint(21)
-);
+-- CREATE TABLE `ranking` (
+-- `name` varchar(100)
+-- ,`total` double
+-- ,`RANKING` bigint(21)
+-- );
 
 -- --------------------------------------------------------
 
@@ -202,7 +202,16 @@ INSERT INTO `riwayat_keuangan` (`id`, `total_bayar`, `tanggal`, `status`, `keter
 (26, 1, '2022-06-10', 'keluar', 'y'),
 (30, 5000, '2022-06-10', 'masuk', 'Bayar Kas'),
 (31, 20000, '2022-06-10', 'keluar', 'Ngurangin Uang'),
-(32, 40000, '2022-06-10', 'keluar', 'Jadiin 0');
+(32, 40000, '2022-06-10', 'keluar', 'Jadiin 0'),
+(37, 5000, '2022-06-10', 'masuk', 'Bayar Kas'),
+(38, 50000, '2022-06-10', 'keluar', 'Test lagi bang'),
+(39, 5000, '2022-06-10', 'masuk', 'Bayar Kas'),
+(40, 50000, '2022-06-11', 'keluar', 'Test Alert'),
+(41, 10000, '2022-06-11', 'keluar', 'Test alert kedua'),
+(42, 5000, '2022-06-11', 'keluar', 'Test alert ketiga'),
+(43, 1000, '2022-06-11', 'keluar', 'test alert keempat'),
+(44, 1000, '2022-06-11', 'keluar', 'test alert keempat'),
+(46, 5000, '2022-06-11', 'masuk', 'Bayar Kas');
 
 --
 -- Triggers `riwayat_keuangan`
@@ -227,7 +236,7 @@ CREATE TABLE `saldo` (
 --
 
 INSERT INTO `saldo` (`total`) VALUES
-(0);
+(65000);
 
 -- --------------------------------------------------------
 
@@ -246,7 +255,6 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`id`, `nis`, `name`) VALUES
-(1, '2003918', 'Sandi Faisal F'),
 (2, '2003919', 'Alfin Muhammad Ilmi');
 
 --
@@ -310,9 +318,9 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 -- Structure for view `ranking`
 --
-DROP TABLE IF EXISTS `ranking`;
+-- DROP TABLE IF EXISTS `ranking`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `ranking`  AS SELECT `siswa`.`name` AS `name`, sum(`kas`.`pekan1` + `kas`.`pekan2` + `kas`.`pekan3` + `kas`.`pekan4`) AS `total`, dense_rank()  ( partition by `kas`.`bulan` order by sum(`kas`.`pekan1` + `kas`.`pekan2` + `kas`.`pekan3` + `kas`.`pekan4`) desc) AS `over` FROM (`kas` join `siswa` on(`kas`.`nis` = `siswa`.`nis`)) GROUP BY `kas`.`nis` ORDER BY dense_rank()  ( partition by `kas`.`bulan` order by sum(`kas`.`pekan1` + `kas`.`pekan2` + `kas`.`pekan3` + `kas`.`pekan4`) desc) AS `over` ASC ;
+-- CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `ranking`  AS SELECT `siswa`.`name` AS `name`, sum(`kas`.`pekan1` + `kas`.`pekan2` + `kas`.`pekan3` + `kas`.`pekan4`) AS `total`, dense_rank()  ( partition by `kas`.`bulan` order by sum(`kas`.`pekan1` + `kas`.`pekan2` + `kas`.`pekan3` + `kas`.`pekan4`) desc) AS `over` FROM (`kas` join `siswa` on(`kas`.`nis` = `siswa`.`nis`)) GROUP BY `kas`.`nis` ORDER BY dense_rank()  ( partition by `kas`.`bulan` order by sum(`kas`.`pekan1` + `kas`.`pekan2` + `kas`.`pekan3` + `kas`.`pekan4`) desc) AS `over` ASC ;
 
 -- --------------------------------------------------------
 
@@ -371,7 +379,7 @@ ALTER TABLE `kas`
 -- AUTO_INCREMENT for table `riwayat_keuangan`
 --
 ALTER TABLE `riwayat_keuangan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `siswa`
