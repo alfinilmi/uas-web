@@ -23,19 +23,19 @@
             <tr>
                 <td>NIS</td>
                 <td>:</td>
-                <td><input type="text" class="form-control" name="nis" id="nis" autocomplete="off"></td>
+                <td><input type="text" class="form-control" name="nis" id="nis" autocomplete="off" required></td>
             </tr>
             <tr>
                 <td>Nama</td>
                 <td>:</td>
-                <td><input type="text" class="form-control" name="name" id="name" autocomplete="off"></td>
+                <td><input type="text" class="form-control" name="name" id="name" autocomplete="off" required></td>
             </tr>
 
           </table>
       </div>
     </div>
   </div>
-  
+</div>
 <center><div class="col-xl-3 col-lg-4">
 <input type="submit" class="btn btn-primary" name="tambah" value="Tambah">
 <input type="button" name="batal" class="btn btn-danger"  value="Batal" onClick="javascript:history.back()">

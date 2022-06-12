@@ -104,7 +104,6 @@
               <td><?php echo  $r['total']; ?></td>
               </tr>
             <?php
-            $no++;
             }
           ?>
       </table>
