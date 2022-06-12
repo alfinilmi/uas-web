@@ -25,7 +25,7 @@
                 <td>NIS</td>
                 <td>:</td>
                 <input type="hidden" name="id" value="<?php echo $d['id']?>"/>
-                <td><input type="text" class="form-control" name="nis" id="nis" autocomplete="off" disabled></td>
+                <td><input type="text" class="form-control" name="nis" id="nis" autocomplete="off"></td>
             </tr>
             <tr>
                 <td>Nama</td>

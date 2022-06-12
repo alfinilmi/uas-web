@@ -7,7 +7,7 @@ if (isset ($_POST['tambah'])){
     $name= $_POST['name'];
 
     //query pake procedure
-    $sql = "CALL tsiswa ('$id', '$nis', '$name')";
+    $sql = "CALL tsiswa ('$nis', '$name')";
     $query = mysqli_query($kon, $sql);
     
     if( $query ) {

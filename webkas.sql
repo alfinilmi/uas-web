@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 12, 2022 at 03:34 PM
+-- Generation Time: Jun 12, 2022 at 04:17 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -35,6 +35,10 @@ UPDATE kas set nis = niss , bulan = bulans, pekan1 = pekans1, pekan2 = pekans2, 
 INSERT INTO riwayat_keuangan VALUES (null,5000,now(),"masuk","Bayar Kas");
 end$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ditsiswa` (IN `ids` INT, IN `niss` VARCHAR(50), IN `names` VARCHAR(255))  begin
+    update siswa set nis = niss, name = names where id = ids;
+    end$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `tadmin` (IN `unames` VARCHAR(100), IN `passwds` VARCHAR(20))  begin
 insert into admin values (null,unames,passwds);
 end$$
@@ -60,7 +64,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `uname`, `passw`) VALUES
-(1, 'admin', 'admin');
+(1, 'admin', 'admin2');
 
 -- --------------------------------------------------------
 
@@ -106,7 +110,19 @@ INSERT INTO `kas` (`id`, `nis`, `bulan`, `pekan1`, `pekan2`, `pekan3`, `pekan4`)
 (21, '2003919', 'September', '0', '0', '0', '0'),
 (22, '2003919', 'Oktober', '0', '0', '0', '0'),
 (23, '2003919', 'November', '0', '0', '0', '0'),
-(24, '2003919', 'Desember', '0', '0', '0', '0');
+(24, '2003919', 'Desember', '0', '0', '0', '0'),
+(25, '2000000', 'Januari', '0', '0', '0', '0'),
+(26, '2000000', 'Februari', '0', '0', '0', '0'),
+(27, '2000000', 'Maret', '0', '0', '0', '0'),
+(28, '2000000', 'April', '0', '0', '0', '0'),
+(29, '2000000', 'Mei', '0', '0', '0', '0'),
+(30, '2000000', 'Juni', '0', '0', '0', '0'),
+(31, '2000000', 'Juli', '0', '0', '0', '0'),
+(32, '2000000', 'Agustus', '0', '0', '0', '0'),
+(33, '2000000', 'September', '0', '0', '0', '0'),
+(34, '2000000', 'Oktober', '0', '0', '0', '0'),
+(35, '2000000', 'November', '0', '0', '0', '0'),
+(36, '2000000', 'Desember', '0', '0', '0', '0');
 
 --
 -- Triggers `kas`
@@ -255,7 +271,8 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`id`, `nis`, `name`) VALUES
-(2, '2003919', 'Alfin Muhammad Ilmi');
+(2, '200000', 'Alfin M Ilmi'),
+(3, '2003918', 'Sandi Faisal Ferdiansyah');
 
 --
 -- Triggers `siswa`
@@ -373,7 +390,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `kas`
 --
 ALTER TABLE `kas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `riwayat_keuangan`
@@ -385,7 +402,7 @@ ALTER TABLE `riwayat_keuangan`
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
