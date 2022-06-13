@@ -20,6 +20,7 @@
                   <th>Tanggal</th>
                   <th>Jumlah Kas</th>
                   <th>Keterangan</th>
+                  <th>Action</th>
                   <!-- <th>Action</th> -->
               </tr>
           </thead>
@@ -37,6 +38,9 @@
               <td><?php echo  $r['tanggal']; ?></td>
               <td>Rp.<?php echo number_format($r['total_bayar']); ?>,-</td>
               <td><?php echo  $r['keterangan']; ?></td>
+              <td>
+              <a href="hapus.php?id=<?php echo  $r['id']; ?>"> <i class="fa fa-eraser" title="hapus" style="color:black"></i>Hapus</a>   
+              </td>
             </tr>
             <?php
               $no++;
